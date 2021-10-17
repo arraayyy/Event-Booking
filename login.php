@@ -10,7 +10,8 @@
         $password = $_POST['password'];
 
         if(!empty($user_name) && !empty($password)){
-            // read from database
+
+            // read from the database
             $query = "select * from users_detail where username = '$user_name' limit 1";
             
             $result = mysqli_query($conn, $query);
@@ -73,14 +74,14 @@
 
                                 <!---------- USERNAME ---------->
                                 <div class="mt-4">
-                                    <label for="name">Username</label>
-                                    <input type="text" class="form-control mt-2" id="username" name="username" required>
+                                    <label for="name" class="form-label">Username</label>
+                                    <input type="text" class="form-control" id="username" name="username" required>
                                     </div>
 
                                 <!---------- PASSWORD ---------->
                                 <div class="mt-4">
-                                    <label for="name">Password</label>
-                                    <input type="text" class="form-control mt-2" id="upassword" name="password" required>
+                                    <label for="name" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="upassword" name="password" required>
                                 </div>
 
                                 <!---------- LOGIN BUTTON ---------->
