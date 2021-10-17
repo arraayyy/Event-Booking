@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include_once "config.php";
+    include_once "connect.php";
     include_once "functions.php";    
     
     $user_data = check_login($conn);
