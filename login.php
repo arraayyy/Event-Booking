@@ -1,3 +1,45 @@
+<?php
+    session_start();
+
+    include("config.php");
+    include("functions.php");    
+
+    if($_SERVER['REQUEST_METHOD'] == "POST"){
+        // something was posted
+        $user_name = $_POST['username'];
+        $password = $_POST['password'];
+
+        if(!empty($user_name) && !empty($password)){
+            // read from database
+            $query = "select * from users_detail where username = '$user_name' limit 1";
+            
+            $result = mysqli_query($conn, $query);
+
+            if($result){
+                if($result && mysqli_num_rows($result) > 0 ){
+                    $user_data = mysqli_fetch_assoc($result);
+                    
+                    if($user_data['password'] === $password){
+                        $_SESSION['user_id'] = $user_data['user_id'];
+                        if($user_data['user_type'] === 'User'){
+                            header("Location: user.php");
+                            die;
+                        }else{
+                            header("Location: index.php");
+                            die; 
+                        }
+    
+                    } 
+                }
+            }
+            echo '<script>alert("Incorrect Username or Password")</script>';
+        } else {
+            echo '<script>alert("Please Enter Valid Information")</script>';
+        }
+    }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
