@@ -13,6 +13,8 @@
 </head>
 <body>
     <header>
+
+        <!---------- BACKGROUND IMG ---------->
         <div class="overlay"></div>
 
         <img src="./img/simple.png">
@@ -21,20 +23,24 @@
             <div class="d-flex h-100 align-items-center">
                 <div class="w-100">
 
+                    <!---------- CARD FOR FORM ----------> 
                     <div class="container">
                         <form class="card mt-5 px-3 py-3 container bg-transparent text-white" style="width: 25rem;" method = "POST">
                             <div class="card-header h3 text-center fw-bold fs-2">LOGIN</div>
                                 <div class="row align-items-center">
+
                                 <!---------- USERNAME ---------->
-                                    <div class="mt-4">
-                                        <label for="name">Username</label>
-                                        <input type="text" class="form-control mt-2" id="username" name="username" required>
+                                <div class="mt-4">
+                                    <label for="name">Username</label>
+                                    <input type="text" class="form-control mt-2" id="username" name="username" required>
                                     </div>
+
                                 <!---------- PASSWORD ---------->
                                 <div class="mt-4">
                                     <label for="name">Password</label>
                                     <input type="text" class="form-control mt-2" id="upassword" name="password" required>
                                 </div>
+
                                 <!---------- LOGIN BUTTON ---------->
                                 <div class="mt-4 text-center">
                                     <button class="btn btn-light ">Login</button>
