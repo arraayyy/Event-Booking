@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    include("config.php");
+    include("connect.php");
     include("functions.php");    
 
     if($_SERVER['REQUEST_METHOD'] == "POST"){
