@@ -13,26 +13,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ADMING PAGE</title>
+    <title>ADMIN PAGE</title>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+        }
+        body {
+            background: url("./img/simple.png") no-repeat fixed center ;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
 
         <!---------- CARD FOR ADMIN ----------> 
-        <div class="card mt-5 px-3 py-3 container align-items-center">
-            <span class="card-header h3 text-center fw-bold fs-2" style="width: 35rem;">ADMIN</span>
+        <div class="card mt-5 px-3 py-3 container align-items-center bg-dark text-white" style="width: 35rem;">
+            <span class="card-header h3 text-center fw-bold fs-2">ADMIN</span>
          
 
             <!---------- ADMIN NAME ----------> 
-            <div class="card body">
-                <h5 class="card-title">
+            <div class="card-body border-0">
+                <h5 class="card-title mt-4">
                     <?php echo  $user_data['name']; ?>
                 </h5>
             </div>
+
+            <!---------- LOGOUT ----------> 
+            <a href="logout.php">
+                <button class="btn btn-dark btn-outline-light mt-3 mb-2" name="logout"  id="logout">
+                    Logout
+                </button>
+            </a>
+
+            <!---------- HR ---------->
+            <hr width="500px;" size="7">
+
+            <!---------- TABS ---------->
+            <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+
+                <!---------- CREATE EVENT TAB ---------->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="event_tab" data-bs-toggle="tab" data-bs-target="#event" type="button" role="tab" aria-controls="home" aria-selected="true">Create Event</button>
+                </li>
+
+                 <!---------- CREATE USER TAB ---------->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="user_tab" data-bs-toggle="tab" data-bs-target="#user" type="button" role="tab" aria-controls="profile" aria-selected="false">Create User</button>
+                </li>
+
+                 <!---------- DISPLAY TAB ---------->
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="display-tab" data-bs-toggle="tab" data-bs-target="#display" type="button" role="tab" aria-controls="display" aria-selected="false">Display</button>
+                </li>
+            </ul>
+
+            <!---------- TABS' CONTENT ---------->
+            <div class="tab-content" id="myTabContent">
+
+                <!---------- CREATE EVENT CONTENT ---------->
+                <div class="tab-pane fade show active" id="event" role="tabpanel" aria-labelledby="event_tab">
+
+                     <!---------- FORM OF CREATE EVENT ---------->
+                    <form action="insertEvent.php" method="POST">
+                        <div class="mt-3">
+                            <label class="form-label">Event Name</label>
+                            <input type="text" class="form-control bg-dark text-white" name="event_name" id="event_name">
+                        </div>
+         
+
+                        <!------------------ UPLOAD IMAGE ------------------>
+                        <div class="mt-3">
+                            <label class="form-label">Event Image</label>
+                            <input type="file" class="form-control bg-dark text-white" name="event_image" id="event_image" accept="image/png, image/jpeg, image/jpg">
+                        </div>
+                        
+                        <!---------- HR ---------->
+                        <hr size="5">
+
+                        <!------------------SUBMIT ------------------------->
+                        <div class="mt-4 text-center">
+                            <button class="btn btn-dark btn-outline-primary" name="submitNewEvent" id="submitNewEvent">Submit</button>
+                        </div>
+                    </form> 
+                </div>
+
+                <!---------- CREATE USER CONTENT ---------->
+                <div class="tab-pane fade" id="user" role="tabpanel" aria-labelledby="user_tab">
+                    <?php include_once "register.php"; ?>
+                </div>
+
         </div> 
     </div>
 </body>

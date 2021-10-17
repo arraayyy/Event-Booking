@@ -76,7 +76,7 @@
                                 <div class="mt-4">
                                     <label for="name" class="form-label">Username</label>
                                     <input type="text" class="form-control" id="username" name="username" required>
-                                    </div>
+                                </div>
 
                                 <!---------- PASSWORD ---------->
                                 <div class="mt-4">
