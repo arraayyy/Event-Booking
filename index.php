@@ -27,6 +27,7 @@
         body {
             background: url("./img/simple.png") no-repeat fixed center ;
         }
+    
     </style>
 </head>
 <body>
@@ -34,7 +35,7 @@
 
         <!---------- CARD FOR ADMIN ----------> 
         <div class="card mt-5 px-3 py-3 container align-items-center bg-dark text-white" style="width: 35rem;">
-            <span class="card-header h3 text-center fw-bold fs-2">ADMIN</span>
+            <span class="card-header h3 text-center text-secondary fw-bold fs-2">ADMIN</span>
          
 
             <!---------- ADMIN NAME ----------> 
@@ -55,7 +56,7 @@
             <hr width="500px;" size="7">
 
             <!---------- TABS ---------->
-            <ul class="nav nav-tabs mt-2" id="myTab" role="tablist">
+            <ul class="nav nav-pills mt-2" id="myTab" role="tablist">
 
                 <!---------- CREATE EVENT TAB ---------->
                 <li class="nav-item" role="presentation">
@@ -73,12 +74,15 @@
                 </li>
             </ul>
 
+            <!---------- HR ---------->
+            <hr width="305px;" size="6">
+
             <!---------- TABS' CONTENT ---------->
             <div class="tab-content" id="myTabContent">
 
                 <!---------- CREATE EVENT CONTENT ---------->
                 <div class="tab-pane fade show active" id="event" role="tabpanel" aria-labelledby="event_tab">
-
+                    
                      <!---------- FORM OF CREATE EVENT ---------->
                     <form action="insertEvent.php" method="POST">
                         <div class="mt-3">
@@ -86,7 +90,6 @@
                             <input type="text" class="form-control bg-dark text-white" name="event_name" id="event_name">
                         </div>
          
-
                         <!------------------ UPLOAD IMAGE ------------------>
                         <div class="mt-3">
                             <label class="form-label">Event Image</label>
@@ -108,7 +111,58 @@
                     <?php include_once "register.php"; ?>
                 </div>
 
-        </div> 
-    </div>
+                <!---------- DISPLAY CONTENT ---------->
+                <div class="tab-pane fade" id="display" role="tabpanel" aria-labelledby="display-tab">
+                    
+                    <!---------- EVENT WORD ---------->
+                    <h3 class="text-white h3 text-center mt-3 fw-bold" style="font-family:'Fira Sans', sans-serif;">EVENTS</h3>
+
+                    <!---------- CARD ---------->
+                    <div class="container">
+                        <?php
+                            $displayAllEvent = "SELECT * FROM `events`";
+                            $displayAllEvent_res = $conn->query($displayAllEvent);
+
+                            if($displayAllEvent_res->num_rows > 0){
+                                while($AllEvent_row = $displayAllEvent_res->fetch_assoc()){ 
+                        ?>
+                        
+                        <!---------- DISPLAY CARD ---------->
+                        <div class="card mt-5 px-3 py-3 bg-dark border border-outline-light" style="width: 27rem;">
+                                        
+                            <!---------- DISPLAY IMAGE ---------->
+                            <img src="img/<?php echo $AllEvent_row['event_image']?>" class="card-img-top" height="auto" width="auto" alt="<?php echo $AllEvent_row['event_image']?>">
+                            
+                            <!---------- EVENT NAME ---------->
+                            <div class="card-body">
+                                <h5 class="card-title text-light fw-bold fs-4 text-center" style="font-family:'Fira Sans', sans-serif;"><?php echo $AllEvent_row['event_name']?></h5>
+                            </div>
+                            
+                            <!---------- BUTTONS ---------->
+                            <div class="container row">
+                                <div class="col-sm-12 text-center">
+
+                                    <!---------- UPDATE BUTTON ---------->
+                                    <a href="edit.php?edit=<?php echo $AllEvent_row['event_id']; ?>">
+                                        <!-- <input type="button" name="edit"  id="edit" data-bs-target="#diNo" value="Update" > -->
+                                        <button class="btn btn-dark btn-outline-primary" name="edit" id="edit" data-bs-target="#diNo">Update</button>
+                                    </a>  
+                                    
+                                    <!---------- DELETE BUTTON ---------->
+                                    <a href="delete.php?delete=<?php echo $AllEvent_row['event_id']; ?>">
+                                        <button class="btn btn-dark btn-outline-danger" name="edit" id="edit" data-bs-target="#diNo">Delete</button>
+                                    </a>
+                                </div>
+                            </div>
+                                          
+                        </div>
+                                <?php
+                            }
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div> 
+        </div>
 </body>
 </html>
