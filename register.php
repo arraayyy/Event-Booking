@@ -40,7 +40,7 @@
     <div class="container">
 
         <!---------- FORM FOR REGISTER ---------->
-        <form action="" method="POST" class="card mt-5 bg-dark border border-outline-light px-3 py-3" style="width: 20rem;">
+        <form action="" method="POST" class="card mt-4 bg-dark border border-outline-light px-3 py-3" style="width: 20rem;">
             <div class="card-header h4 text-center fw-bold">REGISTER</div>
                 <div class="row align-items-center">
 
