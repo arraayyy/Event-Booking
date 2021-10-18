@@ -2,16 +2,16 @@
     include "connect.php"; 
 
     $id = $_GET['edit']; // id
-    $qry = mysqli_query($conn,"SELECT * FROM events WHERE event_id='$id'"); 
+    $qry = mysqli_query($conn,"SELECT * FROM events WHERE event_id = '$id'"); 
     $data = mysqli_fetch_array($qry); // fetch data
 
     if(isset($_POST['submit'])) // when update button is clicked 
     {
         $fullname = $_POST['eventName'];
-        $edit = mysqli_query($conn,"UPDATE events SET event_name='$fullname' WHERE event_id='$id'"); // update
+        $edit = mysqli_query($conn,"UPDATE events SET event_name = '$fullname' WHERE event_id = '$id'"); // update
         
         if($edit) {
-            header("Location:admin.php"); 
+            header("Location: index.php"); 
             exit;
         } else {
             echo mysqli_error();
@@ -35,10 +35,10 @@
     <form method="POST" class="form-inline">
         <div class="row">
             <div class="col-md-4">
-                <input type="text" class="form-control" name="fullname" value="<?php echo $data['event_name'] ?>" placeholder="Enter Full Name" Required>
+                <input type="text" class="form-control" name="eventName" value="<?php echo $data['event_name'] ?>" placeholder="Enter Full Name" Required>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-dark btn-outline-primary" type="submit" name="update">Update</button>
+                <button class="btn btn-dark btn-outline-primary" type="submit" name="submit">Update</button>
             </div>
         </div>
     </form>  
