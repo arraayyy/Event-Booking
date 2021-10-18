@@ -143,14 +143,14 @@
                                 <div class="col-sm-12 text-center">
 
                                     <!---------- UPDATE BUTTON ---------->
-                                    <a href="edit.php?edit=<?php echo $AllEvent_row['event_id']; ?>">
+                                    <a href="update.php?edit=<?php echo $AllEvent_row['event_id']; ?>">
                                         <!-- <input type="button" name="edit"  id="edit" data-bs-target="#diNo" value="Update" > -->
-                                        <button class="btn btn-dark btn-outline-primary" name="edit" id="edit" data-bs-target="#diNo">Update</button>
+                                        <button class="btn btn-dark btn-outline-primary" name="edit" id="edit">Update</button>
                                     </a>  
                                     
                                     <!---------- DELETE BUTTON ---------->
                                     <a href="delete.php?delete=<?php echo $AllEvent_row['event_id']; ?>">
-                                        <button class="btn btn-dark btn-outline-danger" name="edit" id="edit" data-bs-target="#diNo">Delete</button>
+                                        <button class="btn btn-dark btn-outline-danger" name="edit" id="edit">Delete</button>
                                     </a>
                                 </div>
                             </div>
