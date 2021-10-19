@@ -23,7 +23,7 @@
                     if($user_data['password'] === $password){
                         $_SESSION['user_id'] = $user_data['user_id'];
                         if($user_data['user_type'] === 'User'){
-                            header("Location: user.php");
+                            header("Location: user1.php");
                             die;
                         }else{
                             header("Location: index.php");

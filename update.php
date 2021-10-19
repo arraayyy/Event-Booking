@@ -12,7 +12,7 @@
         
         if($edit) {
             header("Location: index.php"); 
-            exit;
+            die;
         } else {
             echo mysqli_error();
         }    	
@@ -38,7 +38,7 @@
                 <input type="text" class="form-control" name="eventName" value="<?php echo $data['event_name'] ?>" placeholder="Enter Full Name" Required>
             </div>
             <div class="col-md-4">
-                <button class="btn btn-dark btn-outline-primary" onclick="#display" type="submit" name="submit">Update</button>
+                <button class="btn btn-dark btn-outline-primary" type="submit" name="submit">Update</button>
             </div>
         </div>
     </form>  
