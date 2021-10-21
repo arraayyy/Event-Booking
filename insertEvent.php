@@ -1,5 +1,5 @@
 <?php
-     include("connect.php");
+     include "connect.php" ;
 
     //  include("functions.php");    
     if(isset($_POST['submitNewEvent'])) {

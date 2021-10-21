@@ -64,7 +64,7 @@
 
                     <!---------- EMAIL ---------->
                     <div class="mt-4">
-                        <label for="name" class="form-label">Username</label>
+                        <label for="name" class="form-label">Email</label>
                         <input type="email" class="form-control bg-dark text-white" id="email" name="email" required>
                     </div>
 

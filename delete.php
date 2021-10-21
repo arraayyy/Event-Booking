@@ -1,5 +1,5 @@
 <?php
-    include_once 'connect.php';
+    include "connect.php";
 
     $id = $_GET["delete"];
     $del = "DELETE FROM events WHERE event_id = '$id'";
