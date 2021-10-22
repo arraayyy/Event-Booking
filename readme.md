@@ -1,6 +1,5 @@
-https://github.com/arraayyy/Event-Booking.git
 
-THIS IS OUR MIDTERMS
+THIS IS OUR WEB DEV MIDTERMS
 
 Create an Event Booking Website
 
