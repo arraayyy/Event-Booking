@@ -4,6 +4,7 @@
 3. Import the database "event_booking.sql" file into phpmyadmin
 3. Run the program : localhost/Event-booking-index.php
 
+<<<<<<< HEAD
 
 /* NOTE */
 /*   
@@ -11,3 +12,6 @@
 */
 
 **** ALL RIGHTS RESERVED 2023 ****
+=======
+Event Booking in PHP
+>>>>>>> 43c1382ecb229f8c2cfba3c57704d2831ed7f0b7
