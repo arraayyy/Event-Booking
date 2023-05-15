@@ -7,7 +7,7 @@
     $user_data = check_login($conn);
     $id = $_SESSION['user_id'];
 
-    // echo $id;
+    echo $id;
 
     if(isset($_POST['submit_book'])){
         $new = $_POST['submit_book'];
@@ -18,7 +18,7 @@
         // echo $result;
         // echo $query;
         if($result){
-            header("Location:user1.php");
+            header("Location:index.php");
         }else{
             echo("ERROR: ".$query."<br>".mysqli_error($conn));
         }
@@ -33,7 +33,7 @@
 
         // check if insert is successful
         if(mysqli_query($conn, $sqldeleteEvent)){
-            header("Location: user1.php");
+            header("Location: index.php");
         }
         else{
             echo("ERROR: ".$sqldeleteEvent."<br>".mysqli_error($conn));

@@ -75,18 +75,19 @@
                                 <!---------- USERNAME ---------->
                                 <div class="mt-4">
                                     <label for="name" class="form-label">Username</label>
-                                    <input type="text" class="form-control" id="username" name="username" required>
+                                    <input autocomplete="off" type="text" class="form-control" id="username" name="username" required>
                                 </div>
 
                                 <!---------- PASSWORD ---------->
                                 <div class="mt-4">
                                     <label for="name" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="upassword" name="password" required>
+                                    <input autocomplete="off" type="password" class="form-control" id="password" name="password" required>
                                 </div>
 
                                 <!---------- LOGIN BUTTON ---------->
                                 <div class="mt-4 text-center">
-                                    <button class="btn btn-light ">Login</button>
+                                    <a href="home.php" class="btn btn-danger btn-outline-daner">Back</a>
+                                    <button class="btn btn-outline-primary fw-bold ">Login</button>
                                 </div>
                             </div>
                         </form>
