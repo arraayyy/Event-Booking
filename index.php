@@ -88,17 +88,17 @@
                     <form action="insertEvent.php" method="POST">
                         <div class="mt-3">
                             <label class="form-label">Event Name</label>
-                            <input type="hidden" name="id" value="<?php echo $user_data['user_id'];?>">
+                            <input type="hidden" name="id" value="<?php echo $user_data['user_id'];?>" required>
                             <input autocomplete="off" type="text" class="form-control bg-dark text-white" name="event_name" id="event_name">
                             
                             <label class="form-label mt-3">Location</label>
-                            <input tautocomplete="off" ype="text" class="form-control bg-dark text-white" name="event_loc" id="event_loc">
+                            <input tautocomplete="off" ype="text" class="form-control bg-dark text-white" name="event_loc" id="event_loc" required>
                         </div>
          
                         <!------------------ UPLOAD IMAGE ------------------>
                         <div class="mt-3">
                             <label class="form-label">Event Image</label>
-                            <input type="file" class="form-control bg-dark text-white" name="event_image" id="event_image" accept="image/png, image/jpeg, image/jpg">
+                            <input type="file" class="form-control bg-dark text-white" name="event_image" id="event_image" accept="image/png, image/jpeg, image/jpg" required>
                         </div>
                         
                         <!---------- HR ---------->
