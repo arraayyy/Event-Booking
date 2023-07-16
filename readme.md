@@ -4,7 +4,7 @@
 3. Import the database "event_booking.sql" file into phpmyadmin
 3. Run the program : localhost/Event-booking-index.php
 
-<<<<<<< HEAD
+
 
 /* NOTE */
 /*   
